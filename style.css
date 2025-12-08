@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "ControllerExt";
+    src: url("fonte/Controller-Ext-W01-Four.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: "ControllerExt", sans-serif;
+}
+
+header{
+    background-color: #3D756C;
+    width: 100%;
+    padding: 10px 20px;
+
+    .header-container{
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fheader{
+        font-size: 36px;
+        color: #7AC5A1;
+        letter-spacing: 1px;
+        max-width: 680px;
+    }
+}
+
+main{
+    flex: 1;
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px; 
+        
+    div{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h1{
+        color: #3D756C; 
+        font-size: 36px;
+        max-width: 870px;
+    }
+    
+    p{
+        padding-top: 25px;
+        padding-left: 30px; 
+        font-family: consolas, monospace;
+        font-size: 24px;
+        max-width: 850px;
+    }
+}
+
+footer{
+    display: flex;
+    background-color: #3D756C;
+    padding: 20px;
+    justify-content: center; 
+    gap: 60px;
+    align-items: center;
+}
