@@ -7,11 +7,11 @@ const dadosProjeto = [];
 async function carregarProjetos(tipo) {
   dadosProjeto.length = 0;
 
-  const indexRes = await fetch(`/projetos/${tipo}/index.json`);
+  const indexRes = await fetch(`projetos/${tipo}/index.json`);
   const arquivos = await indexRes.json();
 
   for (const nome of arquivos) {
-    const res = await fetch(`/projetos/${tipo}/${nome}`);
+    const res = await fetch(`projetos/${tipo}/${nome}`);
     const projeto = await res.json();
     projeto._tipo = tipo;
     dadosProjeto.push(projeto);
