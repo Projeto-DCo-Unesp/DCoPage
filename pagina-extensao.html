@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos de Extensão Ativos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos de Extensão Ativos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="templates/header.js"></script>
-    <app-footer></app-footer>
 
-    <main class="main-projeto">
-        <section>
-            <h1>Projetos de Extensão Ativos</h1>
-            <p>
-                Atividades e projetos de extensão ativos referentes aos cursos de Bacharelado em 
-                Ciência da Computação e Bacharelado em Sistemas de Informação
-            </p>
-        </section>
+  <!-- Header -->
+  <script src="templates/header.js"></script>
+  <app-header></app-header>
 
-        <p class="lista" id="listaProjetos"></p>
+  <main class="main-projeto">
 
-        <script src="../js/lerPosts.js"></script>
-    </main>
+    <section>
+      <h1>Projetos de Extensão Ativos</h1>
+      <p>
+        Atividades e projetos de extensão ativos referentes aos cursos de
+        Bacharelado em Ciência da Computação e Bacharelado em Sistemas de Informação
+      </p>
+    </section>
 
-    <script src="templates/footer.js"></script>
-    <app-footer></app-footer>
+    <!-- LISTA -->
+    <ul class="lista" id="listaProjetos"></ul>
+
+  </main>
+
+  <!-- Footer -->
+  <script src="templates/footer.js"></script>
+  <app-footer></app-footer>
+
+  <!-- JS -->
+  <script src="/js/carregarDados.js"></script>
+  <script>
+    carregarProjetos("extensao");
+  </script>
+
 </body>
 </html>

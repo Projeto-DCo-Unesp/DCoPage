@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerar Projeto</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 6px;
+        }
+
+        button {
+            margin-top: 16px;
+        }
+
+        #loginBox {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="templates/header.js"></script>
+    <app-header></app-header>
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+        <h2>Login</h2>
+
+        <label>Usuário</label>
+        <input id="loginUser">
+
+        <label>Senha</label>
+        <input id="loginPass" type="password">
+
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <div id="formBox" style="display:none">
+
+        <h2>Cadastro de Projeto</h2>
+
+        <label>Tipo</label>
+        <select id="tipo">
+            <option value="extensao">Extensão</option>
+            <option value="disciplina">Disciplina</option>
+        </select>
+
+        <label>Título</label>
+        <input id="titulo">
+
+        <label>Ano / Data</label>
+        <input id="data">
+
+        <label>Descrição</label>
+        <textarea id="descricao"></textarea>
+
+        <label>Autor(es)</label>
+        <textarea id="autor" placeholder="1 por linha"></textarea>
+
+        <label>AutorNick (GitHub)</label>
+        <textarea id="autornick" placeholder="1 por linha"></textarea>
+
+        <label>Orientador</label>
+        <input id="orientador">
+
+        <button onclick="gerar()">Gerar JSON</button>
+        <button onclick="logout()">Sair</button>
+
+    </div>
+
+    <script>
+        /* =====================
+           CONFIG
+        ===================== */
+        const USUARIO = "admin";
+        const SENHA_HASH = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4";
+
+        /* =====================
+           AUTH
+        ===================== */
+        async function login() {
+            const hash = await sha256(loginPass.value);
+            if (loginUser.value === USUARIO && hash === SENHA_HASH) {
+                sessionStorage.setItem("auth", "true");
+                mostrarFormulario();
+            } else {
+                alert("Usuário ou senha inválidos");
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem("auth");
+            location.reload();
+        }
+
+        function mostrarFormulario() {
+            loginBox.style.display = "none";
+            formBox.style.display = "";
+        }
+
+        function verificarAuth() {
+            if (sessionStorage.getItem("auth") === "true") {
+                mostrarFormulario();
+            }
+        }
+
+        /* =====================
+           GERAR JSON
+        ===================== */
+        function gerar() {
+            const obj = {
+                tipo: tipo.value,
+                titulo: titulo.value.trim(),
+                data: data.value.trim(),
+                descricao: descricao.value.trim(),
+                autor: autor.value
+                    .split("\n")
+                    .map(v => v.trim())
+                    .filter(Boolean),
+                autornick: autornick.value
+                    .split("\n")
+                    .map(v => v.trim())
+                    .filter(Boolean),
+                orientador: orientador.value.trim()
+            };
+
+            baixarJSON(obj);
+        }
+
+
+        function baixarJSON(obj) {
+            const blob = new Blob(
+                [JSON.stringify(obj, null, 2)],
+                { type: "application/json" }
+            );
+
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `${obj.titulo || "projeto"}.json`;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+
+        /* =====================
+           UTIL
+        ===================== */
+        async function sha256(text) {
+            const data = new TextEncoder().encode(text);
+            const hash = await crypto.subtle.digest("SHA-256", data);
+            return Array.from(new Uint8Array(hash))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        verificarAuth();
+    </script>
+
+    <!-- Footer -->
+    <script src="templates/footer.js"></script>
+    <app-footer></app-footer>
+
+</body>
+
+</html>

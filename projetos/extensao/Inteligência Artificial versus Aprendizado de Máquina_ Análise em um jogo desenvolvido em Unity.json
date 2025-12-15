@@ -1,0 +1,13 @@
+{
+  "tipo": "extensao",
+  "titulo": "Inteligência Artificial versus Aprendizado de Máquina: Análise em um jogo desenvolvido em Unity",
+  "data": "2024/2",
+  "descricao": "Este trabalho compara técnicas de Inteligência Artificial (IA) e Machine Learning (ML) aplicadas ao desenvolvimento de personagens não-jogáveis (NPCs, do inglês Non-Playable Characters) em jogos eletrônicos, focando no uso do aprendizado por reforço para treinar um agente em um ambiente simulado criado no Unity. Foi implementado um jogo em que o jogador controla um caçador tentando capturar um cervo, sendo este último controlado por um agente com IA tradicional ou treinado por ML. O estudo utiliza métricas de desempenho, como taxa de fuga, tempo de captura e distância média entre os dois, para avaliar a eficácia dos dois agentes. Os resultados mostraram que o agente treinado por ML apresentou melhor desempenho, fugindo por mais tempo do caçador e ocasionalmente aplicando estratégias de fuga inesperadas. A pesquisa contribui para o avanço no desenvolvimento de jogos ao explorar como o ML pode gerar comportamentos mais dinâmicos e imersivos para NPCs, possibilitando novas abordagens para desafios e interações em jogos eletrônicos.",
+  "autor": [
+    "Eric Trofino"
+  ],
+  "autornick": [
+    "EricT"
+  ],
+  "orientador": "Profª. Drª. Juliana da Costa Feitosa"
+}

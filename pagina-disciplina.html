@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentos e Metodologia da Extensão Universitária</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos e Metodologia da Extensão Universitária</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="templates/header.js"></script>
-    <app-footer></app-footer>
 
-    <main class="main-projeto">
-        <section>
-            <h1>Fundamentos e Metodologia da Extensão Universitária </h1>
-            <p>
-                Projetos de extensão desenvolvidos pelos alunos de Ciência da Computação e 
-                Sistemas de Informação durante a disciplina de Fundamentos e Metodologia da Extensão Universitária
-            </p>
-        </section>
+  <!-- Header -->
+  <script src="templates/header.js"></script>
+  <app-header></app-header>
 
-        <p class="lista" id="listaProjetos"></p>
-        <script src="../js/lerPosts.js"></script>
-    </main>
+  <main class="main-projeto">
 
-    <script src="templates/footer.js"></script>
-    <app-footer></app-footer>
-    
+    <section>
+      <h1>Fundamentos e Metodologia da Extensão Universitária</h1>
+      <p>
+        Projetos de extensão desenvolvidos pelos alunos de Ciência da Computação e
+        Sistemas de Informação durante a disciplina de Fundamentos e Metodologia da
+        Extensão Universitária
+      </p>
+    </section>
+
+    <ul class="lista" id="listaProjetos"></ul>
+
+  </main>
+
+  <!-- Footer -->
+  <script src="templates/footer.js"></script>
+  <app-footer></app-footer>
+
+  <!-- JS DE LEITURA -->
+  <script src="/js/carregarDados.js"></script>
+  <script>
+    carregarProjetos("disciplina");
+  </script>
+
 </body>
 </html>

@@ -19,6 +19,7 @@ function parseProjeto(mdText) {
     });
     // Conteúdo/descrição (match[2])
     projeto.descricao = match[2].trim();
+    projeto.integrantes = match[3].trim();
   } else {
     // Se não houver frontmatter, guarda tudo na descrição
     projeto.descricao = mdText.trim();
@@ -45,9 +46,21 @@ function mostraListaLinks() {
   ul.innerHTML = '';
   dadosProjeto.forEach((proj, idx) => {
     const li = document.createElement('li');
-    li.textContent = `title: "${proj.title || "Projeto "+(idx+1)}"`;
-    li.style.cursor = 'pointer';
-    li.onclick = () => mostraProjetoIndividual(idx);
+    const title = document.createElement("strong");
+    title.textContent = `"${proj.title || "Projeto " + (idx + 1)}"`;
+
+    const desc = document.createElement("div");
+    desc.textContent = proj.descricao || "Integrantes:";
+    desc.style.textAlign = "justify";
+
+    li.append(title);
+    li.append(document.createElement("br"));
+    li.append(document.createElement("br"));
+    li.append(desc);
+    li.append(document.createElement("br"));
+
+    //li.style.cursor = 'pointer';
+    //li.onclick = () => mostraProjetoIndividual(idx);
     ul.appendChild(li);
   });
   document.getElementById('listaProjetos').style.display = '';
@@ -65,7 +78,7 @@ function mostraProjetoIndividual(idx) {
   const campos = Object.keys(dadosProjeto[idx])
     .filter(k => k !== 'descricao' && dadosProjeto[idx][k]);
 
-  let html = `<h2>${dadosProjeto[idx].title || 'Projeto ' + (idx+1)}</h2>`;
+  let html = `<h2>${dadosProjeto[idx].title || 'Projeto ' + (idx + 1)}</h2>`;
   campos.forEach(campo => {
     if (campo !== 'layout') html += `<b>${campo}:</b> ${dadosProjeto[idx][campo]}<br>`;
   });
