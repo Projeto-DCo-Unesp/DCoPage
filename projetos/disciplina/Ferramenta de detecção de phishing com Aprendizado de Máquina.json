@@ -1,0 +1,14 @@
+{
+  "tipo": "disciplina",
+  "titulo": "Ferramenta de detecção de phishing com Aprendizado de Máquina",
+  "data": "2025/1",
+  "descricao": "Com a popularização da internet, crimes virtuais como o phishing estão se tornando cada vez mais comuns. Em função disto, torna-se necessário o desenvolvimento de métodos de detecção simples para proteger a população. Este trabalho propõe a criação de uma aplicação simplificada para a detecção destes ataques, utilizando-se de modelos de aprendizado de máquina para validar os endereços web apresentados pelo usuário. Os modelos utilizados foram Árvore de Decisão, Floresta Aleatória, Árvores Extremamente Aleatórias, XGBoost, CatBoost e Regressão Logística, orquestrados de forma a poupar poder computacional e minimizar o tempo de execução.",
+  "autor": [
+    "Marina Rijo de Oliveira"
+  ],
+  "autornick": [
+    "MarinaRO"
+    
+  ],
+  "orientador": "Prof. Dr. Kelton Augusto Pontara da Costa"
+}

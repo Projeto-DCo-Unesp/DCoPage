@@ -1,0 +1,13 @@
+{
+  "tipo": "disciplina",
+  "titulo": "Em busca da aplicação de protocolos de roteamento para evitar ataques do tipo Buraco Negro",
+  "data": "2024/1",
+  "descricao": "O Ataque Buraco Negro é um tipo de ataque cibernético que ocorre em uma Rede Móvel Ad hoc (MANET), se aproveita da forma que o principal algoritmo de roteamento se utiliza para encontrar o caminho entre dois nós. Este ataque é capaz de capturar e descartar os pacotes de dados desta rede, consequentemente ocasionando em uma negação de serviço (DoS). Além disso, o Ataque Buraco Negro é relativamente simples de ser executado, tendo em vista que as MANETs são caracterizadas por sua facilidade de conexão, maleabilidade e mobilidade. Portanto, é importante que sejam pesquisadas formas para evitar, pelo menos, as principais consequências deste tipo de ataque. Esta monografia se concentra na modificação e análise de um algoritmo de roteamento para evitar a principal consequência de um Ataque Buraco Negro: a DoS, utilizando uma abordagem de diferente lógica de roteamento e utilização de múltiplos caminhos simultaneamente. Esta lógica de roteamento é baseada na Busca em Profundidade (DFS), que mostrou resultados promissores para redes com poucos nós. A abordagem proposta, embora não sendo muito bem-sucedida, mostrou certa promessa, mostrando que a ideia possui méritos.",
+  "autor": [
+    "Alex Luiz Domingues Cassinelli"
+  ],
+  "autornick": [
+    "AlexLDC"
+  ],
+  "orientador": "Prof. Dr. Kelton Augusto Pontara da Costa"
+}
