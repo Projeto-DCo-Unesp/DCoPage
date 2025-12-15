@@ -116,3 +116,99 @@ footer{
     gap: 60px;
     align-items: center;
 }
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  header .fheader {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .main-inicial,
+  .main-projeto {
+    padding: 40px 16px;
+  }
+
+  .main-inicial h1,
+  .main-projeto h1 {
+    font-size: 30px;
+  }
+
+  .main-inicial p,
+  .main-projeto p {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+
+  header .header-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  header .fheader {
+    font-size: 22px;
+  }
+
+  .main-inicial section,
+  .main-projeto section {
+    margin-bottom: 40px;
+  }
+
+  .main-inicial div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-inicial h1,
+  .main-projeto h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .main-inicial p,
+  .main-projeto p {
+    font-size: 18px;
+    padding-left: 0;
+    padding-top: 16px;
+  }
+
+  .main-inicial .a {
+    padding-top: 30px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+
+  .main-inicial h1,
+  .main-projeto h1 {
+    font-size: 20px;
+  }
+
+  .main-inicial p,
+  .main-projeto p {
+    font-size: 16px;
+  }
+
+  svg {
+    width: 60px;
+    height: 50px;
+  }
+}
