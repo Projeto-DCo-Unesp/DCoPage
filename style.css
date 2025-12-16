@@ -162,6 +162,10 @@ footer{
   .main-inicial section,
   .main-projeto section {
     margin-bottom: 40px;
+
+    .marker {
+      display: none;
+    }
   }
 
   .main-inicial div {

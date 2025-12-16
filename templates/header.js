@@ -1,7 +1,7 @@
 class AppHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <header>
+      <header><a href="index.html">
         <div class="header-container">
             <h1 class="fheader">ACEUs - Departamento de Computação</h1>
 
@@ -15,8 +15,9 @@ class AppHeader extends HTMLElement {
                 <image id="image0_228_27" width="1024" height="768" preserveAspectRatio="none" href="images/dco_logo.png"/>
                 </defs>
                 </svg>
-            </div>
+            </div>     
         </div>
+        </a>
     </header>
     `;
   }

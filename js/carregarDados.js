@@ -35,10 +35,16 @@ function mostrarLista() {
     /* ===== TÍTULO ===== */
     const titulo = document.createElement("p");
     titulo.textContent = p.titulo || `Projeto ${idx + 1}`;
+    titulo.style.fontFamily = "ControllerExt";
+    titulo.style.fontSize = "25px";
+    titulo.style.fontWeight = "bold";
+    titulo.style.color = "#3D756C";
 
     /* ===== DESCRIÇÃO ===== */
     const descricao = document.createElement("p");
     descricao.textContent = p.descricao || "";
+    descricao.style.fontFamily = "consolas, monospace";
+    descricao.style.fontSize = "17px";
     descricao.style.textAlign = "justify";
     descricao.style.marginTop = "0.2%";
 
@@ -47,13 +53,13 @@ function mostrarLista() {
     meta.style.marginTop = "0.2%";
 
     meta.append(
-      texto("Autor: "),
+      bold("Autor: "),
       texto(Array.isArray(p.autor) ? p.autor.join(", ") : p.autor),
       document.createElement("br"),
-      texto("Orientador: "),
+      bold("Orientador: "),
       texto(p.orientador || "-"),
       document.createElement("br"),
-      texto("Ano: "),
+      bold("Ano: "),
       texto(p.data || "-")
     );
 
@@ -61,7 +67,7 @@ function mostrarLista() {
     const github = document.createElement("p");
     github.style.marginTop = "0.2%";
 
-    const label = document.createElement("div");
+    const label = document.createElement("strong");
     label.textContent = "GitHub: ";
     github.append(label);
 
@@ -93,6 +99,12 @@ function mostrarLista() {
 
 function texto(t) {
   return document.createTextNode(t || "");
+}
+
+function bold(txt) {
+  const strong = document.createElement("strong");
+  strong.textContent = txt;
+  return strong;
 }
 
 /* =========================
